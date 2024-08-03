@@ -124,11 +124,15 @@ namespace SlivenProjectsTests.Helpers
 
         protected string GetText(By by)
         {
+            // return the etext property of the IWebElement, using our custom FinElement method
             return FindElement(by).Text;
         }
 
         protected string[] GetElementsTextArray(By by)
         {
+            // return an array of strings -  text properties of the IWebElements
+            // of the collection, returned by the custom FindElements method.
+           
             IReadOnlyCollection<IWebElement> elements = FindElements(by);
             IWebElement[] webElementsArrauy = elements.ToArray();
             string[] textArray = new string[elements.Count];
@@ -141,17 +145,22 @@ namespace SlivenProjectsTests.Helpers
 
         protected IWebElement[] GetWebElementsArray(By by)
         {
+            // return an array of IWebElements of the collection,
+            // returned by the custom FindElements method.
+
             IReadOnlyCollection<IWebElement> elements = FindElements(by);
             return elements.ToArray();
         }
 
         public string GetCurrentUrl(IWebDriver driver)
         {
+            // returns the current URL
             return driver.Url;
         }
 
         public string GetCurrentPageTitle(IWebDriver driver)
         {
+            // returns the current page title
             return driver.Title;
         }
     }
