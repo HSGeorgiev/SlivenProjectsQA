@@ -26,6 +26,8 @@ namespace SlivenProjectsTests.Tests
             options.AddArgument("disable-dev-shm-usage");
             options.AddArgument("windows-size=1920x1080");
             options.AddArgument("disable-extensions");
+            options.AddUserProfilePreference("profile.password_manager_enabled", false);
+            options.AddArgument("--disable-search-engine-choice-screen");
 
             driver = new ChromeDriver(options);
 
