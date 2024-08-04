@@ -11,7 +11,6 @@ namespace SlivenProjectsTests.Pages
     {
         public HomePage(IWebDriver driver) : base(driver)
         {
-            SubUrl = "/";
         }
 
         

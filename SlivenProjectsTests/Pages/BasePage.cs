@@ -6,7 +6,6 @@ namespace SlivenProjectsTests.Pages
 {
     public class BasePage : DriverHelper
     {
-        public string SubUrl { get; set; }
  
         public BasePage(IWebDriver driver) : base(driver)
         {
@@ -15,17 +14,17 @@ namespace SlivenProjectsTests.Pages
 
         // Go to current page
 
-        public void GoToCurrentPage()
+        public void GoToTargetPage(string subUrl)
         {
-            driver.Navigate().GoToUrl(GlobalConstants.BASE_URL + SubUrl);
+            driver.Navigate().GoToUrl(GlobalConstants.BASE_URL + subUrl);
         }
 
         // all six top-menu links
-        protected readonly By topMenuItems = By.CssSelector(".art-hmenu li a");
+        public By topMenuItems = By.CssSelector(".art-hmenu li a");
 
         // texts on the all six top-menu links/tabs
-        string[] topMenuTexts = { "Начало", "Структурни фондове на ЕС", "Други инструменти на ЕС",
-            "Предприсъединителни инструменти", "Национални програми", "Търсене" };
+        public string[] topMenuTexts = { "Начало", "Структурни фондове на ЕС", "Други инструменти на ЕС",
+            "Предприсъединителни и-ти", "Национални програми", "Търсене" };
 
 
         public bool[] menuLinksTextsCheck(By by, string[] texts)
@@ -38,8 +37,8 @@ namespace SlivenProjectsTests.Pages
         // If number of elements doesn't fit length of texts array, fail the assert with message.
         
         {
-            bool[]? results = null; ;
-            string[]? menuElementsTexts = GetElementsTextArray(by);
+            bool[] results = new bool[texts.Length];
+            string[] menuElementsTexts = GetElementsTextArray(by);
 
             if (menuElementsTexts.Length == texts.Length)
             {
