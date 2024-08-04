@@ -1,22 +1,33 @@
 ﻿using OpenQA.Selenium;
+using SlivenProjectsTests.Globals;
 using SlivenProjectsTests.Helpers;
 
 namespace SlivenProjectsTests.Pages
 {
     public class BasePage : DriverHelper
     {
+        public string SubUrl { get; set; }
+ 
         public BasePage(IWebDriver driver) : base(driver)
         {
+
+        }
+
+        // Go to current page
+
+        public void GoToCurrentPage()
+        {
+            driver.Navigate().GoToUrl(GlobalConstants.BASE_URL + SubUrl);
         }
 
         // all six top-menu links
         protected readonly By topMenuItems = By.CssSelector(".art-hmenu li a");
 
         // texts on the all six top-menu links/tabs
-        string[] topMenuTexts = { "Начало", "Структурни фондове на ЕС", "Други инструменти на ЕС", 
+        string[] topMenuTexts = { "Начало", "Структурни фондове на ЕС", "Други инструменти на ЕС",
             "Предприсъединителни инструменти", "Национални програми", "Търсене" };
 
-        
+
         public bool[] menuLinksTextsCheck(By by, string[] texts)
 
         // by => an By class menu element description - need to be a menu element
