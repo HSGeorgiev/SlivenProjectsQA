@@ -124,7 +124,7 @@ namespace SlivenProjectsTests.Helpers
 
         protected string GetText(By by)
         {
-            // return the etext property of the IWebElement, using our custom FinElement method
+            // return the text property of the IWebElement, using our custom FinElement method
             return FindElement(by).Text;
         }
 
