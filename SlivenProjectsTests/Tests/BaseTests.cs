@@ -18,12 +18,22 @@ namespace SlivenProjectsTests.Tests
         [SetUp]
         public void Setup()
         {
-            options.AddUserProfilePreference("profile.password_manager_enabled", false);
-            options.AddArgument("disable-search-engine-choice-screen");
-            options.AddArgument("window-size=1920,1080");
-            options.AddArgument("disable-extensions");
-            options.AddArgument("disable-dev-shm-usage");
+            //This option should be commented when running on local windows
+            options.AddArgument("headless");
+            options.AddArgument("remote-debugging-port=9222");
+            options.AddArgument("disable-gpu");
             options.AddArgument("no-sandbox");
+            options.AddArgument("disable-dev-shm-usage");
+            options.AddArgument("windows-size=1920x1080");
+            options.AddArgument("disable-extensions");
+
+            //This option are OK to work on windows local machine
+            //options.AddUserProfilePreference("profile.password_manager_enabled", false);
+            //options.AddArgument("--disable-search-engine-choice-screen");
+            //options.AddArgument("no-sandbox");
+            //options.AddArgument("disable-dev-shm-usage");
+            //options.AddArgument("windows-size=1920x1080");
+            //options.AddArgument("disable-extensions");
 
             driver = new ChromeDriver(options);
 
