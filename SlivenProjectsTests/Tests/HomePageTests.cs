@@ -12,7 +12,6 @@ namespace SlivenProjectsTests.Tests
        
         string subUrl = "/";
 
-
         [Test]
         public void TopMenu_LinksTexts_ShouldBeProper()
         {

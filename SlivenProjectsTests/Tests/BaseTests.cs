@@ -50,7 +50,5 @@ namespace SlivenProjectsTests.Tests
             }
         }
 
-
-
     }
 }
