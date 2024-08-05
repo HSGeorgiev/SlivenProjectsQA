@@ -179,24 +179,29 @@ namespace SlivenProjectsTests.Helpers
             }
             catch (WebDriverTimeoutException e)
             {
+
+                wait.Timeout = TimeSpan.FromSeconds(GlobalConstants.DEFAULT_TIMEOUT);
                 Assert.Fail($"SLIVEN_PROJECTS_TESTS_ERROR: Some of elements, described as | {by} | not found " +
                     $"after timeout, set on {GlobalConstants.DEFAULT_TIMEOUT} seconds.\n" +
                     $"WebDriver says: {e.Message}");
             }
             catch (InvalidSelectorException e)
             {
+                wait.Timeout = TimeSpan.FromSeconds(GlobalConstants.DEFAULT_TIMEOUT);
                 Assert.Fail($"SLIVEN_PROJECTS_TESTS_ERROR: The argument  | {by} | is not a valid selector here!" +
                     $"WebDriver says: {e.Message}");
             }
 
             catch (ElementNotVisibleException e)
             {
+                wait.Timeout = TimeSpan.FromSeconds(GlobalConstants.DEFAULT_TIMEOUT);
                 Assert.Fail($"SLIVEN_PROJECTS_TESTS_ERROR: Somme of requested elements | {by} | is/are present but is/are not visible!" +
                     $"WebDriver says: {e.Message}");
             }
 
             catch (Exception e)
             {
+                wait.Timeout = TimeSpan.FromSeconds(GlobalConstants.DEFAULT_TIMEOUT);
                 Assert.Fail($"SLIVEN_PROJECTS_TESTS_ERROR: Exception thrown when trying to find element | {by} |!" +
                     $"An exception, not handled in SlivenProjectsTests.Helpers.DriverHelper class." +
                     $"WebDriver says: {e.Message}");
