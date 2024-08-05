@@ -22,7 +22,7 @@ namespace SlivenProjectsTests.Tests
             options.AddArgument("headless");
             options.AddArgument("remote-debugging-port=9222");
             options.AddArgument("disable-gpu");
-            options.AddArgument("no-sandbox");
+            //options.AddArgument("no-sandbox");
             options.AddArgument("disable-dev-shm-usage");
             options.AddArgument("windows-size=1920x1080");
             options.AddArgument("disable-extensions");
