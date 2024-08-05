@@ -21,6 +21,11 @@ namespace SlivenProjectsTests.Tests
 
         //Pages, accessible from the 'InTheRegister' menu
         [TestCase("Проекти", "/index.php?option=com_sobi2&Itemid=86")]
+        [TestCase("Търсене в регистъра", "/index.php?option=com_sobi2&sobi2Task=search&Itemid=53")]
+        [TestCase("Структурни фондове на Европейския съюз", "/index.php?option=com_sobi2&catid=9&Itemid=53")]
+        [TestCase("Други инструменти на Европейския съюз", "/index.php?option=com_sobi2&catid=8&Itemid=53")]
+        [TestCase("Предприсъединителни инструменти", "/index.php?option=com_sobi2&catid=7&Itemid=53")]
+        [TestCase("Други наднационални инструменти", "/index.php?option=com_sobi2&catid=59&Itemid=53")]
 
         public void TopMenu_LinksTexts_ShouldBeProper(string pageHeading, string subUrl)
         {
