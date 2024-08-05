@@ -3,10 +3,10 @@ name: On Push Pull Time Tests Execution
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build:
