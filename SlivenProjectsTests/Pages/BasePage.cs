@@ -69,7 +69,34 @@ namespace SlivenProjectsTests.Pages
             return results;
         }
 
-        
+        public bool[] menuLinksTargetsCheck(By by)
+
+        // By by has to be an css selector of menu, containing li a
+        // menuElementsTexts() returns an array of bools,
+        // true if the element's text is equal to the text in the end of the 
+        // pathway on the target page
+
+        {
+            string[] MenuElementsTexts = GetElementsTextArray(by);
+            IWebElement[] menuElements = GetWebElementsArray(by);
+            bool[] result = new bool[MenuElementsTexts.Length];
+
+            for (int i = 0; i < menuElements.Length; i += 1)
+            {
+                menuElements[i].Click();
+                string pathway = GetText(By.CssSelector("a + img"));
+                if (MenuElementsTexts[i] == pathway)
+                {
+                    result[i] = true;
+                }
+                else
+                {
+                    result[i] = false;
+                }
+            }
+
+            return result;
+        }
 
         
 
