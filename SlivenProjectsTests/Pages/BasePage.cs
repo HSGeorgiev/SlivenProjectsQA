@@ -20,9 +20,9 @@ namespace SlivenProjectsTests.Pages
         }
 
         // all six top-menu links
-        public By topMenuItems = By.CssSelector(".art-hmenu li a");
+        public By topMenuItems = By.XPath("//ul[@class='art-hmenu']/li/a");
         // all eight 'In the Register' menu links
-        public By inRegisterMenuItems = By.XPath("(//ul[@class='menu'])[1]//li");
+        public By inRegisterMenuItems = By.XPath("(//ul[@class='menu'])[1]//li/a");
 
         // texts on the all six top-menu links/tabs
         public string[] topMenuTexts = { "Начало", "Структурни фондове на ЕС", "Други инструменти на ЕС",
@@ -80,11 +80,16 @@ namespace SlivenProjectsTests.Pages
             string[] MenuElementsTexts = GetElementsTextArray(by);
             IWebElement[] menuElements = GetWebElementsArray(by);
             bool[] result = new bool[MenuElementsTexts.Length];
-
+            Console.WriteLine(menuElements.Length);
             for (int i = 0; i < menuElements.Length; i += 1)
             {
+                //Click(menuElements[i]);
                 menuElements[i].Click();
-                string pathway = GetText(By.CssSelector("a + img"));
+
+                Console.WriteLine(MenuElementsTexts[i]);
+                Console.WriteLine(menuElements[i].Text);
+
+                string pathway = GetText(By.XPath("//*[@id=\"art-main\"]/div[1]/div[10]/div[5]/div/div[2]/div[1]/div[10]/div[1]/div[1]/span"));
                 if (MenuElementsTexts[i] == pathway)
                 {
                     result[i] = true;
@@ -93,6 +98,8 @@ namespace SlivenProjectsTests.Pages
                 {
                     result[i] = false;
                 }
+                Console.WriteLine(result[i]);
+                Console.WriteLine(pathway);
             }
 
             return result;

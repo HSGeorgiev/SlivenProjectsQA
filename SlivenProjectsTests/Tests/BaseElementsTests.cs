@@ -1,4 +1,5 @@
-﻿using SlivenProjectsTests.Pages;
+﻿using OpenQA.Selenium;
+using SlivenProjectsTests.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,6 +52,19 @@ namespace SlivenProjectsTests.Tests
                     $"should be {basePage.topMenuTexts[i]}, but is not");
             }
         }
+
+        //[TestCase("Home", "")]
+        //public void TopMenuLinks_Should_work_proper(string pageHeading, string subUrl)
+        //{
+        //    BasePage basePage = new BasePage(driver);
+        //    basePage.GoToTargetPage(subUrl);
+        //    bool[] topMenuTargetsCheck = basePage.menuLinksTargetsCheck(basePage.inRegisterMenuItems);
+        //    for (int i = 0; i < topMenuTargetsCheck.Length; i++)
+        //    {
+        //        Assert.IsTrue(topMenuTargetsCheck[i], $"On the page {pageHeading}  'Top menu' item {basePage.topMenuTexts[i]} " +
+        //            $"target wrong URL address");
+        //    }
+        //}
 
     }
 }
