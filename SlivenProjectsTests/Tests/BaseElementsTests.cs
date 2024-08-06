@@ -32,6 +32,11 @@ namespace SlivenProjectsTests.Tests
         [TestCase("Текущи проекти", "/index.php?option=com_sobi2&catid=34&Itemid=53")]
         [TestCase("Очакващи одобрение и финансиране", "/index.php?option=com_sobi2&catid=35&Itemid=53")]
 
+        //TopMenu_LinksTexts_ShouldBeProper Pages, accessible from the 'Leader/Partner' menu
+        [TestCase("Водеща организация", "/index.php?option=com_sobi2&catid=39&Itemid=53")]
+        [TestCase("Партньорска организация", "/index.php?option=com_sobi2&catid=40&Itemid=53")]
+
+
 
 
         public void TopMenu_LinksTexts_ShouldBeProper(string pageHeading, string subUrl)

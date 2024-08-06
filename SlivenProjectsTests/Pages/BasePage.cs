@@ -35,7 +35,7 @@ namespace SlivenProjectsTests.Pages
 
         public bool[] menuLinksTextsCheck(By by, string[] texts)
 
-        // by => an By class menu element description - need to be a menu element
+        // by => an By class menu element description - have to be a menu element
         // texts => an array of strings, containing menu's items' texts.
         // The number of the strings in texts[] should be equal to number of menu items
         // return array of bools, true if the element's text is equal to
@@ -68,6 +68,8 @@ namespace SlivenProjectsTests.Pages
 
             return results;
         }
+
+        
 
         
 

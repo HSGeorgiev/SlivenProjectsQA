@@ -211,7 +211,7 @@ namespace SlivenProjectsTests.Helpers
 
         }
 
-        public void click(By by)
+        public void Click(By by)
         {
             // We wrap the standard click method here, using our custom FindElement method
             FindElement(by).Click();
