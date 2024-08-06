@@ -22,15 +22,15 @@ namespace SlivenProjectsTests.Pages
         // all six top-menu links
         public By topMenuItems = By.XPath("//ul[@class='art-hmenu']/li/a");
         // all eight 'In the Register' menu links
-        public By inRegisterMenuItems = By.XPath("(//ul[@class='menu'])[1]//li/a");
+        public By inRegisterMenuItems = By.XPath("(//ul[@class='menu'])[1]//li");
 
         // texts on the all six top-menu links/tabs
         public string[] topMenuTexts = { "Начало", "Структурни фондове на ЕС", "Други инструменти на ЕС",
             "Предприсъединителни и-ти", "Национални програми", "Търсене" };
         // texts on the all eight 'In the Register' menu links
-        public string[] inRegisterMenuTexts = { "Начало", "Проекти", "Търсене в регистъра",
-            "Структурни фондове на Европейския съюз", "Други инструменти на Европейския съюз",
-            "Предприсъединителни инструменти", "Национални програми и инструменти", 
+        public string[] inRegisterMenuTexts = { "Начало", "Проекти", "Търсене",
+            "Структурни фондове на ЕС", "Други инструменти на ЕС",
+            "Предприсъединителни фондове", "Национални програми и инструменти", 
             "Други наднационални инструменти"};
 
         public bool[] menuLinksTextsCheck(By by, string[] texts)
