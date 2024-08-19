@@ -14,5 +14,7 @@ namespace SlivenProjectsTests.Pages
         public PreEUFundsPage(IWebDriver driver) : base(driver)
         {
         }
+
+        public string pageUrl => BASE_URL + "/index.php?option=com_sobi2&catid=9&Itemid=53";
     }
 }
