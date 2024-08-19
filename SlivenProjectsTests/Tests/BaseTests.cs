@@ -20,7 +20,7 @@ namespace SlivenProjectsTests.Tests
         public void Setup()
         {
 
-            options.AddArgument("headless");
+            //options.AddArgument("headless");
             options.AddArgument("remote-debugging-port=9222");
             options.AddArgument("disable-gpu");
             //options.AddArgument("no-sandbox");

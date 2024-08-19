@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,7 +15,10 @@ namespace SlivenProjectsTests.Pages
         // excluding base elements, common for all pages.
         public HomePage(IWebDriver driver) : base(driver)
         {
+            
         }
+
+        public string pageUrl => BASE_URL + "/";
 
         
     }

@@ -14,9 +14,9 @@ namespace SlivenProjectsTests.Pages
 
         // Go to current page
 
-        public void GoToTargetPage(string subUrl)
+        public void GoToTargetPage(string pageUrl)
         {
-            driver.Navigate().GoToUrl(GlobalConstants.BASE_URL + subUrl);
+            driver.Navigate().GoToUrl(pageUrl);
         }
 
         // all six top-menu links

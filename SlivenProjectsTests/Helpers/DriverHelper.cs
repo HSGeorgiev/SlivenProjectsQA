@@ -5,7 +5,7 @@ using SlivenProjectsTests.Globals;
 
 namespace SlivenProjectsTests.Helpers
 {
-    public class DriverHelper
+    public class DriverHelper : GlobalConstants
     {
         protected readonly IWebDriver driver;
         protected readonly WebDriverWait wait;

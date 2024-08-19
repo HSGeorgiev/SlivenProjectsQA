@@ -16,7 +16,7 @@ namespace SlivenProjectsTests.Tests
         public void TopMenu_LinksTexts_ShouldBeProper()
         {
             HomePage homePage = new HomePage(driver);
-            homePage.GoToTargetPage(subUrl);
+            homePage.GoToTargetPage(homePage.pageUrl);
             bool[] topMenuChecks = homePage.menuLinksTextsCheck(homePage.topMenuItems, homePage.topMenuTexts);
 
             for (int i = 0; i < topMenuChecks.Length; i++)
