@@ -9,13 +9,13 @@ namespace SlivenProjectsTests.Tests
 {
     internal class OtherEUFundsPgeTests : BaseTests
     {
-        string subUrl = "/index.php?option=com_sobi2&catid=9&Itemid=53";
+        
 
         [Test]
         public void TopMenu_LinksTexts_ShouldBeProper()
         {
             var otherEUFundsPage = new OtherEUInstrumentsPage(driver);
-            otherEUFundsPage.GoToTargetPage(subUrl);
+            otherEUFundsPage.GoToTargetPage(otherEUFundsPage.pageUrl);
             bool[] topMenuChecks = otherEUFundsPage.menuLinksTextsCheck(otherEUFundsPage.topMenuItems, otherEUFundsPage.topMenuTexts);
 
             for (int i = 0; i < topMenuChecks.Length; i++)
@@ -29,7 +29,7 @@ namespace SlivenProjectsTests.Tests
         public void InRegisterMenu_LinksTexts_ShouldBeProper()
         {
             var otherEUFundsPage = new OtherEUInstrumentsPage(driver);
-            otherEUFundsPage.GoToTargetPage(subUrl);
+            otherEUFundsPage.GoToTargetPage(otherEUFundsPage.pageUrl);
             bool[] topMenuChecks = otherEUFundsPage.menuLinksTextsCheck(otherEUFundsPage.inRegisterMenuItems, otherEUFundsPage.inRegisterMenuTexts);
 
             for (int i = 0; i < topMenuChecks.Length; i++)

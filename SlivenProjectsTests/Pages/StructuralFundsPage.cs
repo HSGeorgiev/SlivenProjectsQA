@@ -14,5 +14,7 @@ namespace SlivenProjectsTests.Pages
         public StructuralFundsPage(IWebDriver driver) : base(driver)
         {
         }
+
+        public new string pageUrl => BASE_URL + "/index.php?option=com_sobi2&catid=9&Itemid=53";
     }
 }

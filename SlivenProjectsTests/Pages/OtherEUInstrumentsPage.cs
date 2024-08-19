@@ -15,6 +15,6 @@ namespace SlivenProjectsTests.Pages
         {
         }
 
-        public string pageUrl => BASE_URL + "/index.php?option=com_sobi2&catid=9&Itemid=53";
+        public new string pageUrl => BASE_URL + "/index.php?option=com_sobi2&catid=9&Itemid=53";
     }
 }

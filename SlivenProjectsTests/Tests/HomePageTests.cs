@@ -10,7 +10,7 @@ namespace SlivenProjectsTests.Tests
     internal class HomePageTests : BaseTests
     {
        
-        string subUrl = "/";
+        
 
         [Test]
         public void TopMenu_LinksTexts_ShouldBeProper()
@@ -30,7 +30,7 @@ namespace SlivenProjectsTests.Tests
         public void InRegisterMenu_LinksTexts_ShouldBeProper()
         {
             HomePage homePage = new HomePage(driver);
-            homePage.GoToTargetPage(subUrl);
+            homePage.GoToTargetPage(homePage.pageUrl);
             bool[] topMenuChecks = homePage.menuLinksTextsCheck(homePage.inRegisterMenuItems, homePage.inRegisterMenuTexts);
 
             for (int i = 0; i < topMenuChecks.Length; i++)

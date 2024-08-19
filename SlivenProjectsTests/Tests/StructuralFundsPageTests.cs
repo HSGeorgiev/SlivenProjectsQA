@@ -10,13 +10,13 @@ namespace SlivenProjectsTests.Tests
     internal class StructuralFundsPageTests : BaseTests
     {
 
-        string subUrl = "/index.php?option=com_sobi2&catid=9&Itemid=53";
+        
 
         [Test]
         public void TopMenu_LinksTexts_ShouldBeProper()
         {
             var structuralFundsPage = new StructuralFundsPage(driver);
-            structuralFundsPage.GoToTargetPage(subUrl);
+            structuralFundsPage.GoToTargetPage(structuralFundsPage.pageUrl);
             bool[] topMenuChecks = structuralFundsPage.menuLinksTextsCheck(structuralFundsPage.topMenuItems, structuralFundsPage.topMenuTexts);
 
             for (int i = 0; i < topMenuChecks.Length; i++)
@@ -30,7 +30,7 @@ namespace SlivenProjectsTests.Tests
         public void InRegisterMenu_LinksTexts_ShouldBeProper()
         {
             var structuralFundsPage = new StructuralFundsPage(driver);
-            structuralFundsPage.GoToTargetPage(subUrl);
+            structuralFundsPage.GoToTargetPage(structuralFundsPage.pageUrl);
             bool[] topMenuChecks = structuralFundsPage.menuLinksTextsCheck(structuralFundsPage.inRegisterMenuItems, structuralFundsPage.inRegisterMenuTexts);
 
             for (int i = 0; i < topMenuChecks.Length; i++)

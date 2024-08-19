@@ -19,6 +19,8 @@ namespace SlivenProjectsTests.Pages
             driver.Navigate().GoToUrl(pageUrl);
         }
 
+        public string pageUrl => BASE_URL;
+
         // all six top-menu links
         public By topMenuItems = By.XPath("//ul[@class='art-hmenu']/li/a");
         // all eight 'In the Register' menu links

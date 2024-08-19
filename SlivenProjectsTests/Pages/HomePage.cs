@@ -18,7 +18,8 @@ namespace SlivenProjectsTests.Pages
             
         }
 
-        public string pageUrl => BASE_URL + "/";
+        
+        public new string pageUrl => BASE_URL + "/";
 
         
     }
