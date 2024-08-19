@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace SlivenProjectsTests.Pages
 {
-    // Descript the element and logic on the Structural Funds page,
+    // Descript the element and logic on the ther EU Funds page,
     // excluding base elements, common for all pages.
-    internal class StructuralFundsPage : BasePage
+    internal class OtherEUInstrumentsPage : BasePage
     {
-        public StructuralFundsPage(IWebDriver driver) : base(driver)
+        public OtherEUInstrumentsPage(IWebDriver driver) : base(driver)
         {
         }
     }
