@@ -43,7 +43,7 @@ namespace SlivenProjectsTests.Tests
         public void TopMenu_LinksTexts_ShouldBeProper(string pageHeading, string subUrl)
         {
             BasePage basePage = new BasePage(driver);
-            basePage.GoToTargetPage(subUrl);
+            basePage.GoToTargetPage(BASE_URL + subUrl);
             bool[] topMenuChecks = basePage.menuLinksTextsCheck(basePage.topMenuItems, basePage.topMenuTexts);
 
             for (int i = 0; i < topMenuChecks.Length; i++)

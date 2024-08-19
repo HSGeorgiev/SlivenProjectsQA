@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
+using SlivenProjectsTests.Globals;
 using SlivenProjectsTests.Pages;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SlivenProjectsTests.Tests
 {
-    internal class BaseTests
+    internal class BaseTests : GlobalConstants
     {
         protected IWebDriver driver;
         ChromeOptions options = new ChromeOptions();
