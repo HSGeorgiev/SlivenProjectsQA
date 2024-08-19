@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
 using SlivenProjectsTests.Pages;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,11 @@ namespace SlivenProjectsTests.Tests
 
             driver = new ChromeDriver(options);
 
+            Actions actions = new Actions(driver);
+
             basePage = new BasePage(driver);
+
+
         }
 
         [TearDown]
