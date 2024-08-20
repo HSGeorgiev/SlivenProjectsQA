@@ -3,11 +3,6 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using SlivenProjectsTests.Globals;
 using SlivenProjectsTests.Pages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SlivenProjectsTests.Tests
 {
@@ -21,7 +16,7 @@ namespace SlivenProjectsTests.Tests
         public void Setup()
         {
 
-            //options.AddArgument("headless");
+            options.AddArgument("headless");
             options.AddArgument("remote-debugging-port=9222");
             options.AddArgument("disable-gpu");
             //options.AddArgument("no-sandbox");
