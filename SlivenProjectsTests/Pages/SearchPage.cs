@@ -13,8 +13,8 @@ namespace SlivenProjectsTests.Pages
         {
         }
 
-        public By registerLink => By.XPath("//td[@id='sobi2HeaderComLink']/a");
-        public By searchLink => By.XPath("//td[@id='sobi2HeaderComLink']/a");
+        public new string pageUrl => BASE_URL + "/index.php?option=com_sobi2&sobi2Task=search&Itemid=53";
+
 
 
     }
