@@ -23,7 +23,22 @@ namespace SlivenProjectsTests.Tests
             }
         }
 
- 
+        [Test]
+        public void InRegisterMenu_LinksTexts_ShouldBeProper()
+        {
+            var nationalProgrammsPage = new NationalProgrammsPage(driver);
+            nationalProgrammsPage.GoToTargetPage(nationalProgrammsPage.pageUrl);
+            bool[] topMenuChecks = nationalProgrammsPage.menuLinksTextsCheck(nationalProgrammsPage.inRegisterMenuItems, nationalProgrammsPage.inRegisterMenuTexts);
+
+            for (int i = 0; i < topMenuChecks.Length; i++)
+            {
+                Assert.IsTrue(topMenuChecks[i], $"InRegister menu item {nationalProgrammsPage.inRegisterMenuTexts[i]} " +
+                    $"should be {nationalProgrammsPage.inRegisterMenuTexts[i]}, but is not");
+            }
+        }
+
+
+
 
     }
 }
