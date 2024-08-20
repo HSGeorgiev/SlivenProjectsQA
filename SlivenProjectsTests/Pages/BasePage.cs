@@ -34,6 +34,12 @@ namespace SlivenProjectsTests.Pages
             "Предприсъединителни фондове", "Национални програми и инструменти", 
             "Други наднационални инструменти"};
 
+        // Common base element inside pages
+        public By pageHeaderElement => By.XPath("//h2");
+        public By registerLinkElement => By.XPath("//td[@id='sobi2HeaderComLink']/a");
+        public By searchLinkElement => By.XPath("//td[@id='sobi2HeaderComLink']/a");
+
+
         public bool[] menuLinksTextsCheck(By by, string[] texts)
 
         // by => an By class menu element description - have to be a menu element
