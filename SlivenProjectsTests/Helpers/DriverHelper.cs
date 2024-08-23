@@ -16,6 +16,7 @@ namespace SlivenProjectsTests.Helpers
         {
             this.driver = driver;
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(GlobalConstants.DEFAULT_TIMEOUT));
+            actions = new Actions(driver);
         }
 
         public IWebElement FindElement(By by)
