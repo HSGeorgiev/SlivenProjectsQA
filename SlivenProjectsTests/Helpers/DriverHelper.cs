@@ -218,7 +218,7 @@ namespace SlivenProjectsTests.Helpers
         {
             // We wrap the standard click method here, using our custom FindElement method
             // Just for case using also Actions class method
-            var element = FindElement(by);
+            IWebElement element = FindElement(by);
             actions.ScrollToElement(element);
             element.Click();
         }
