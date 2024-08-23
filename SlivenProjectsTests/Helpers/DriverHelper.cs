@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using SlivenProjectsTests.Globals;
@@ -9,6 +10,7 @@ namespace SlivenProjectsTests.Helpers
     {
         protected readonly IWebDriver driver;
         protected readonly WebDriverWait wait;
+        protected readonly Actions actions;
 
         public DriverHelper(IWebDriver driver)
         {
@@ -214,7 +216,10 @@ namespace SlivenProjectsTests.Helpers
         public void Click(By by)
         {
             // We wrap the standard click method here, using our custom FindElement method
-            FindElement(by).Click();
+            // Just for case using also Actions class method
+            var element = FindElement(by);
+            actions.ScrollToElement(element);
+            element.Click();
         }
 
         public void SendKeys(By by, string text)
