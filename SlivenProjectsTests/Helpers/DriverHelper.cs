@@ -228,6 +228,7 @@ namespace SlivenProjectsTests.Helpers
             // we also clear the element first
 
             IWebElement element = FindElement(by);
+            actions.ScrollToElement(element);
             element.Clear();
             element.SendKeys(text);
         }
