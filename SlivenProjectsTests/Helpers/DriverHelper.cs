@@ -87,6 +87,8 @@ namespace SlivenProjectsTests.Helpers
             }
             catch (WebDriverTimeoutException e)
             {
+                //We do change the wait.TimeOut back to default value in case it wasn't
+                //happened in try clause, before it throw an exception
                 wait.Timeout = TimeSpan.FromSeconds(GlobalConstants.DEFAULT_TIMEOUT);
                 Assert.Fail($"SLIVEN_PROJECTS_TESTS_ERROR: Element, described as| {by} | not found " +
                     $"after timeout, set on {GlobalConstants.DEFAULT_TIMEOUT} seconds.\n" +
