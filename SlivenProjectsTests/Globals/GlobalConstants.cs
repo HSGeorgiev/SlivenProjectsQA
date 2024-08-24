@@ -10,5 +10,6 @@ namespace SlivenProjectsTests.Globals
     {
         public const string BASE_URL = "https://projects.sliven.bg/";
         public const int DEFAULT_TIMEOUT = 10;
+        public const string PR_TITLE = "SLIVEN_PROJECTS_TESTS";
     }
 }
