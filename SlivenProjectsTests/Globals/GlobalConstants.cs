@@ -14,6 +14,8 @@ namespace SlivenProjectsTests.Globals
         public const int DEFAULT_TIMEOUT = 10;
         //The title of the project for the Exceptions' message
         //handlings description messages
+        //Note: some helper methods in DriverHelper.css temporarly changes this value.
         public const string PR_TITLE = "SLIVEN_PROJECTS_TESTS";
+
     }
 }
