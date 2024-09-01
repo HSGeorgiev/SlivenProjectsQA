@@ -24,6 +24,7 @@ namespace SlivenProjectsTests.Pages
         public By topMenuItems = By.XPath("//ul[@class='art-hmenu']/li/a");
         // all eight 'In the Register' menu links
         public By inRegisterMenuItems = By.XPath("(//ul[@class='menu'])[1]//li");
+        public By byStatusMenuItems = By.XPath("(//ul[@class='menu'])[2]//li");
 
         // texts on the all six top-menu links/tabs
         public string[] topMenuTexts = { "Начало", "Структурни фондове на ЕС", "Други инструменти на ЕС",
@@ -33,6 +34,7 @@ namespace SlivenProjectsTests.Pages
             "Структурни фондове на ЕС", "Други инструменти на ЕС",
             "Предприсъединителни фондове", "Национални програми и инструменти", 
             "Други наднационални инструменти"};
+        public string[] byStatusMenuTexts = { "Приключили проекти", "Текущи проекти", "Очакващи одобрение и финансиране", };
 
         // Common base element inside pages
         public By pageHeaderElement => By.XPath("//h2");
