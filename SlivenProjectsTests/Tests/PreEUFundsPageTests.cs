@@ -47,7 +47,7 @@ namespace SlivenProjectsTests.Tests
                 Console.WriteLine(byStatusMenuChecks[i]);
                 Console.WriteLine(preEUFundsPage.byStatusMenuTexts[i]);
 
-                Assert.IsTrue(byStatusMenuChecks[i], $"InRegister menu item {preEUFundsPage.byStatusMenuTexts[i]} " +
+                Assert.IsTrue(byStatusMenuChecks[i], $"ByProjects Status menu item {preEUFundsPage.byStatusMenuTexts[i]} " +
                     $"should be {preEUFundsPage.byStatusMenuTexts[i]}, but is not");
             }
         }

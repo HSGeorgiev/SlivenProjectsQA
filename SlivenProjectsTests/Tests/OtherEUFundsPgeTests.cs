@@ -15,7 +15,7 @@ namespace SlivenProjectsTests.Tests
 
             for (int i = 0; i < topMenuChecks.Length; i++)
             {
-                Assert.IsTrue(topMenuChecks[i], $"Top menu item {otherEUFundsPage.topMenuTexts[i]} " +
+                Assert.IsTrue(topMenuChecks[i], $"ByProjects Status menu item {otherEUFundsPage.topMenuTexts[i]} " +
                     $"should be {otherEUFundsPage.topMenuTexts[i]}, but is not");
             }
         }
