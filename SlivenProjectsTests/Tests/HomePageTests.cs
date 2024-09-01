@@ -26,12 +26,26 @@ namespace SlivenProjectsTests.Tests
         {
             HomePage homePage = new HomePage(driver);
             homePage.GoToTargetPage(homePage.pageUrl);
-            bool[] topMenuChecks = homePage.menuLinksTextsCheck(homePage.inRegisterMenuItems, homePage.inRegisterMenuTexts);
+            bool[] inRegisterMenuChecks = homePage.menuLinksTextsCheck(homePage.inRegisterMenuItems, homePage.inRegisterMenuTexts);
 
-            for (int i = 0; i < topMenuChecks.Length; i++)
+            for (int i = 0; i < inRegisterMenuChecks.Length; i++)
             {
-                Assert.IsTrue(topMenuChecks[i], $"InRegister menu item {homePage.inRegisterMenuTexts[i]} " +
+                Assert.IsTrue(inRegisterMenuChecks[i], $"InRegister menu item {homePage.inRegisterMenuTexts[i]} " +
                     $"should be {homePage.inRegisterMenuTexts[i]}, but is not");
+            }
+        }
+
+        [Test]
+        public void byStatus_LinksTexts_ShouldBeProper()
+        {
+            HomePage homePage = new HomePage(driver);
+            homePage.GoToTargetPage(homePage.pageUrl);
+            bool[] byStatusMenuChecks = homePage.menuLinksTextsCheck(homePage.byStatusMenuItems, homePage.byStatusMenuTexts);
+
+            for (int i = 0; i < byStatusMenuChecks.Length; i++)
+            {
+                Assert.IsTrue(byStatusMenuChecks[i], $"InRegister menu item {homePage.byStatusMenuTexts[i]} " +
+                    $"should be {homePage.byStatusMenuTexts[i]}, but is not");
             }
         }
     }
