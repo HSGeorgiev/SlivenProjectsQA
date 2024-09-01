@@ -32,6 +32,23 @@ namespace SlivenProjectsTests.Tests
             }
         }
 
+        [Test]
+        public void byStatus_LinksTexts_ShouldBeProper()
+        {
+            var nationalProgrammsPage = new NationalProgrammsPage(driver);
+            nationalProgrammsPage.GoToTargetPage(nationalProgrammsPage.pageUrl);
+            bool[] byStatusMenuChecks = nationalProgrammsPage.menuLinksTextsCheck(nationalProgrammsPage.byStatusMenuItems, nationalProgrammsPage.byStatusMenuTexts);
+            Console.WriteLine(byStatusMenuChecks.Length);
+            for (int i = 0; i < byStatusMenuChecks.Length; i++)
+            {
+                Console.WriteLine(byStatusMenuChecks[i]);
+                Console.WriteLine(nationalProgrammsPage.byStatusMenuTexts[i]);
+
+                Assert.IsTrue(byStatusMenuChecks[i], $"InRegister menu item {nationalProgrammsPage.byStatusMenuTexts[i]} " +
+                    $"should be {nationalProgrammsPage.byStatusMenuTexts[i]}, but is not");
+            }
+        }
+
 
 
 
