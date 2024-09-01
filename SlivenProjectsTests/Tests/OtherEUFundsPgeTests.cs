@@ -33,5 +33,19 @@ namespace SlivenProjectsTests.Tests
                     $"should be {otherEUFundsPage.inRegisterMenuTexts[i]}, but is not");
             }
         }
+
+        [Test]
+        public void byStatus_LinksTexts_ShouldBeProper()
+        {
+            var otherEUFundsPage = new OtherEUInstrumentsPage(driver);
+            otherEUFundsPage.GoToTargetPage(otherEUFundsPage.pageUrl);
+            bool[] byStatusMenuChecks = otherEUFundsPage.menuLinksTextsCheck(otherEUFundsPage.byStatusMenuItems, otherEUFundsPage.byStatusMenuTexts);
+            Console.WriteLine(byStatusMenuChecks.Length);
+            for (int i = 0; i < byStatusMenuChecks.Length; i++)
+            {
+                Assert.IsTrue(byStatusMenuChecks[i], $"InRegister menu item {otherEUFundsPage.byStatusMenuTexts[i]} " +
+                    $"should be {otherEUFundsPage.byStatusMenuTexts[i]}, but is not");
+            }
+        }
     }
 }
