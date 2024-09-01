@@ -23,11 +23,11 @@ namespace SlivenProjectsTests.Tests
         {
             var nationalProgrammsPage = new NationalProgrammsPage(driver);
             nationalProgrammsPage.GoToTargetPage(nationalProgrammsPage.pageUrl);
-            bool[] topMenuChecks = nationalProgrammsPage.menuLinksTextsCheck(nationalProgrammsPage.inRegisterMenuItems, nationalProgrammsPage.inRegisterMenuTexts);
+            bool[] inRegisterMenuChecks = nationalProgrammsPage.menuLinksTextsCheck(nationalProgrammsPage.inRegisterMenuItems, nationalProgrammsPage.inRegisterMenuTexts);
 
-            for (int i = 0; i < topMenuChecks.Length; i++)
+            for (int i = 0; i < inRegisterMenuChecks.Length; i++)
             {
-                Assert.IsTrue(topMenuChecks[i], $"InRegister menu item {nationalProgrammsPage.inRegisterMenuTexts[i]} " +
+                Assert.IsTrue(inRegisterMenuChecks[i], $"InRegister menu item {nationalProgrammsPage.inRegisterMenuTexts[i]} " +
                     $"should be {nationalProgrammsPage.inRegisterMenuTexts[i]}, but is not");
             }
         }

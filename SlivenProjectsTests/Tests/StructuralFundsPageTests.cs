@@ -26,11 +26,11 @@ namespace SlivenProjectsTests.Tests
         {
             var structuralFundsPage = new StructuralFundsPage(driver);
             structuralFundsPage.GoToTargetPage(structuralFundsPage.pageUrl);
-            bool[] topMenuChecks = structuralFundsPage.menuLinksTextsCheck(structuralFundsPage.inRegisterMenuItems, structuralFundsPage.inRegisterMenuTexts);
+            bool[] inRegisterMenuChecks = structuralFundsPage.menuLinksTextsCheck(structuralFundsPage.inRegisterMenuItems, structuralFundsPage.inRegisterMenuTexts);
 
-            for (int i = 0; i < topMenuChecks.Length; i++)
+            for (int i = 0; i < inRegisterMenuChecks.Length; i++)
             {
-                Assert.IsTrue(topMenuChecks[i], $"InRegister menu item {structuralFundsPage.inRegisterMenuTexts[i]} " +
+                Assert.IsTrue(inRegisterMenuChecks[i], $"InRegister menu item {structuralFundsPage.inRegisterMenuTexts[i]} " +
                     $"should be {structuralFundsPage.inRegisterMenuTexts[i]}, but is not");
             }
         }
