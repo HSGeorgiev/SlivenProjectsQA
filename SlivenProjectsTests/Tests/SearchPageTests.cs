@@ -33,6 +33,23 @@ namespace SlivenProjectsTests.Tests
                     $"should be {searchPage.inRegisterMenuTexts[i]}, but is not");
             }
         }
+
+        [Test]
+        public void byStatus_LinksTexts_ShouldBeProper()
+        {
+            var searchPage = new SearchPage(driver);
+            searchPage.GoToTargetPage(searchPage.pageUrl);
+            bool[] byStatusMenuChecks = searchPage.menuLinksTextsCheck(searchPage.byStatusMenuItems, searchPage.byStatusMenuTexts);
+
+            for (int i = 0; i < byStatusMenuChecks.Length; i++)
+            {
+                Console.WriteLine(byStatusMenuChecks[i]);
+                Console.WriteLine(searchPage.byStatusMenuTexts[i]);
+
+                Assert.IsTrue(byStatusMenuChecks[i], $"ByProjects Status menu item {searchPage.byStatusMenuTexts[i]} " +
+                    $"should be {searchPage.byStatusMenuTexts[i]}, but is not");
+            }
+        }
     }
 
 

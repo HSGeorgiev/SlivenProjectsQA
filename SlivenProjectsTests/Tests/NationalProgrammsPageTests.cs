@@ -38,7 +38,7 @@ namespace SlivenProjectsTests.Tests
             var nationalProgrammsPage = new NationalProgrammsPage(driver);
             nationalProgrammsPage.GoToTargetPage(nationalProgrammsPage.pageUrl);
             bool[] byStatusMenuChecks = nationalProgrammsPage.menuLinksTextsCheck(nationalProgrammsPage.byStatusMenuItems, nationalProgrammsPage.byStatusMenuTexts);
-            Console.WriteLine(byStatusMenuChecks.Length);
+
             for (int i = 0; i < byStatusMenuChecks.Length; i++)
             {
                 Console.WriteLine(byStatusMenuChecks[i]);

@@ -41,11 +41,10 @@ namespace SlivenProjectsTests.Tests
             var preEUFundsPage = new PreEUFundsPage(driver);
             preEUFundsPage.GoToTargetPage(preEUFundsPage.pageUrl);
             bool[] byStatusMenuChecks = preEUFundsPage.menuLinksTextsCheck(preEUFundsPage.byStatusMenuItems, preEUFundsPage.byStatusMenuTexts);
-            Console.WriteLine(byStatusMenuChecks.Length);
+
             for (int i = 0; i < byStatusMenuChecks.Length; i++)
             {
-                Console.WriteLine(byStatusMenuChecks[i]);
-                Console.WriteLine(preEUFundsPage.byStatusMenuTexts[i]);
+
 
                 Assert.IsTrue(byStatusMenuChecks[i], $"ByProjects Status menu item {preEUFundsPage.byStatusMenuTexts[i]} " +
                     $"should be {preEUFundsPage.byStatusMenuTexts[i]}, but is not");

@@ -40,7 +40,7 @@ namespace SlivenProjectsTests.Tests
             var otherEUFundsPage = new OtherEUInstrumentsPage(driver);
             otherEUFundsPage.GoToTargetPage(otherEUFundsPage.pageUrl);
             bool[] byStatusMenuChecks = otherEUFundsPage.menuLinksTextsCheck(otherEUFundsPage.byStatusMenuItems, otherEUFundsPage.byStatusMenuTexts);
-            Console.WriteLine(byStatusMenuChecks.Length);
+
             for (int i = 0; i < byStatusMenuChecks.Length; i++)
             {
                 Assert.IsTrue(byStatusMenuChecks[i], $"InRegister menu item {otherEUFundsPage.byStatusMenuTexts[i]} " +
