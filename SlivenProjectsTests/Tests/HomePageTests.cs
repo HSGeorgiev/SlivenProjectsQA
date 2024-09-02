@@ -36,7 +36,7 @@ namespace SlivenProjectsTests.Tests
         }
 
         [Test]
-        public void byStatus_LinksTexts_ShouldBeProper()
+        public void ByStatus_LinksTexts_ShouldBeProper()
         {
             HomePage homePage = new HomePage(driver);
             homePage.GoToTargetPage(homePage.pageUrl);
@@ -45,6 +45,20 @@ namespace SlivenProjectsTests.Tests
             for (int i = 0; i < byStatusMenuChecks.Length; i++)
             {
                 Assert.IsTrue(byStatusMenuChecks[i], $"ByProjects Status menu item {homePage.byStatusMenuTexts[i]} " +
+                    $"should be {homePage.byStatusMenuTexts[i]}, but is not");
+            }
+        }
+
+        [Test]
+        public void RoleOfSliven_LinksTexts_ShouldBeProper()
+        {
+            HomePage homePage = new HomePage(driver);
+            homePage.GoToTargetPage(homePage.pageUrl);
+            bool[] roleMenuChecks = homePage.menuLinksTextsCheck(homePage.roleOfSlivenMunMenuItems, homePage.roleOfSlivenMunMenuTexts);
+
+            for (int i = 0; i < roleMenuChecks.Length; i++)
+            {
+                Assert.IsTrue(roleMenuChecks[i], $"By Role Of Sliven menu item {homePage.roleOfSlivenMunMenuTexts[i]} " +
                     $"should be {homePage.byStatusMenuTexts[i]}, but is not");
             }
         }
