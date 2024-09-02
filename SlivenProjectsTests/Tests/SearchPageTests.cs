@@ -35,7 +35,7 @@ namespace SlivenProjectsTests.Tests
         }
 
         [Test]
-        public void byStatus_LinksTexts_ShouldBeProper()
+        public void ByStatus_LinksTexts_ShouldBeProper()
         {
             var searchPage = new SearchPage(driver);
             searchPage.GoToTargetPage(searchPage.pageUrl);

@@ -36,7 +36,7 @@ namespace SlivenProjectsTests.Tests
         }
 
         [Test]
-        public void byStatus_LinksTexts_ShouldBeProper()
+        public void ByStatus_LinksTexts_ShouldBeProper()
         {
             var preEUFundsPage = new PreEUFundsPage(driver);
             preEUFundsPage.GoToTargetPage(preEUFundsPage.pageUrl);
