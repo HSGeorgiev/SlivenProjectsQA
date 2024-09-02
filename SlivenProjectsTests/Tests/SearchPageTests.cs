@@ -50,6 +50,20 @@ namespace SlivenProjectsTests.Tests
                     $"should be {searchPage.byStatusMenuTexts[i]}, but is not");
             }
         }
+
+        [Test]
+        public void RoleOfSliven_LinksTexts_ShouldBeProper()
+        {
+            var searchPage = new SearchPage(driver);
+            searchPage.GoToTargetPage(searchPage.pageUrl);
+            bool[] roleMenuChecks = searchPage.menuLinksTextsCheck(searchPage.roleOfSlivenMunMenuItems, searchPage.roleOfSlivenMunMenuTexts);
+
+            for (int i = 0; i < roleMenuChecks.Length; i++)
+            {
+                Assert.IsTrue(roleMenuChecks[i], $"By Role Of Sliven menu item {searchPage.roleOfSlivenMunMenuTexts[i]} " +
+                    $"should be {searchPage.byStatusMenuTexts[i]}, but is not");
+            }
+        }
     }
 
 
