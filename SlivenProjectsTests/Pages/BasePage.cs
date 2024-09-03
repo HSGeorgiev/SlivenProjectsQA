@@ -26,6 +26,7 @@ namespace SlivenProjectsTests.Pages
         public By inRegisterMenuItems = By.XPath("(//ul[@class='menu'])[1]//li");
         public By byStatusMenuItems = By.XPath("(//ul[@class='menu'])[2]//li");
         public By roleOfSlivenMunMenuItems = By.XPath("(//ul[@class='menu'])[3]//li");
+        public By yearsMenuItems = By.XPath("(//ul[@class='menu'])[4]//li");
 
         // texts on the all six top-menu links/tabs
         public string[] topMenuTexts = { "Начало", "Структурни фондове на ЕС", "Други инструменти на ЕС",
@@ -37,6 +38,35 @@ namespace SlivenProjectsTests.Pages
             "Други наднационални инструменти"};
         public string[] byStatusMenuTexts = { "Приключили проекти", "Текущи проекти", "Очакващи одобрение и финансиране", };
         public string[] roleOfSlivenMunMenuTexts = { "Водеща организация", "Партньорска организация" };
+        public string[] yearsMenuTexts = { 
+            "Текуща година", 
+            "2024 г.", 
+            "Планирани/бъдещи години", 
+            "2025 г.", 
+            "2026 г.", 
+            "Изминали години",
+            "2023 г.",
+            "2022 г.",
+            "2021 г.",
+            "2020 г.",
+            "2019 г.",
+            "2018 г.",
+            "2017 г.",
+            "2016 г.",
+            "2015 г.",
+            "2014 г.",
+            "2013 г.",
+            "2012 г.",
+            "2011 г.",
+            "2010 г.",
+            "2009 г.",
+            "2008 г.",
+            "2007 г.",
+            "2006 г.",
+            "2005 г.",
+            "2004 г.",
+
+        };
 
         // Common base element inside pages
         public By pageHeaderElement => By.XPath("//h2");
