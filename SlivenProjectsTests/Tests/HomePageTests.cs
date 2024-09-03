@@ -59,7 +59,23 @@ namespace SlivenProjectsTests.Tests
             for (int i = 0; i < roleMenuChecks.Length; i++)
             {
                 Assert.IsTrue(roleMenuChecks[i], $"By Role Of Sliven menu item {homePage.roleOfSlivenMunMenuTexts[i]} " +
-                    $"should be {homePage.byStatusMenuTexts[i]}, but is not");
+                    $"should be {homePage.roleOfSlivenMunMenuTexts[i]}, but is not");
+            }
+        }
+
+        [Test]
+        public void ByYearsMenu_LinksTexts_ShouldBeProper()
+        {
+            HomePage homePage = new HomePage(driver);
+            homePage.GoToTargetPage(homePage.pageUrl);
+            bool[] yearsMenuChecks = homePage.menuLinksTextsCheck(homePage.yearsMenuItems, homePage.yearsMenuTexts);
+
+            for (int i = 0; i < yearsMenuChecks.Length; i++)
+            {
+                Console.WriteLine(yearsMenuChecks[i]);
+                Console.WriteLine(homePage.yearsMenuTexts[i]);
+                Assert.IsTrue(yearsMenuChecks[i], $"By Role Of Sliven menu item {homePage.yearsMenuTexts[i]} " +
+                    $"should be {homePage.yearsMenuTexts[i]}, but is not");
             }
         }
     }
