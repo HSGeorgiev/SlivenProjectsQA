@@ -61,5 +61,21 @@ namespace SlivenProjectsTests.Tests
                     $"should be {otherEUFundsPage.byStatusMenuTexts[i]}, but is not");
             }
         }
+
+        [Test]
+        public void ByYearsMenu_LinksTexts_ShouldBeProper()
+        {
+            var otherEUFundsPage = new OtherEUInstrumentsPage(driver);
+            otherEUFundsPage.GoToTargetPage(otherEUFundsPage.pageUrl);
+            bool[] yearsMenuChecks = otherEUFundsPage.menuLinksTextsCheck(otherEUFundsPage.yearsMenuItems, otherEUFundsPage.yearsMenuTexts);
+
+            for (int i = 0; i < yearsMenuChecks.Length; i++)
+            {
+                Console.WriteLine(yearsMenuChecks[i]);
+                Console.WriteLine(otherEUFundsPage.yearsMenuTexts[i]);
+                Assert.IsTrue(yearsMenuChecks[i], $"By Role Of Sliven menu item {otherEUFundsPage.yearsMenuTexts[i]} " +
+                    $"should be {otherEUFundsPage.yearsMenuTexts[i]}, but is not");
+            }
+        }
     }
 }
