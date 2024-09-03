@@ -73,7 +73,7 @@ namespace SlivenProjectsTests.Tests
             {
                 Console.WriteLine(yearsMenuChecks[i]);
                 Console.WriteLine(otherEUFundsPage.yearsMenuTexts[i]);
-                Assert.IsTrue(yearsMenuChecks[i], $"By Role Of Sliven menu item {otherEUFundsPage.yearsMenuTexts[i]} " +
+                Assert.IsTrue(yearsMenuChecks[i], $"By year menu item {otherEUFundsPage.yearsMenuTexts[i]} " +
                     $"should be {otherEUFundsPage.yearsMenuTexts[i]}, but is not");
             }
         }

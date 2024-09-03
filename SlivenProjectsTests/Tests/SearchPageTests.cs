@@ -76,7 +76,7 @@ namespace SlivenProjectsTests.Tests
             {
                 Console.WriteLine(yearsMenuChecks[i]);
                 Console.WriteLine(searchPage.yearsMenuTexts[i]);
-                Assert.IsTrue(yearsMenuChecks[i], $"By Role Of Sliven menu item {searchPage.yearsMenuTexts[i]} " +
+                Assert.IsTrue(yearsMenuChecks[i], $"By year menu item {searchPage.yearsMenuTexts[i]} " +
                     $"should be {searchPage.yearsMenuTexts[i]}, but is not");
             }
         }
