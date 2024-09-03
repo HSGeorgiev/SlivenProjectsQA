@@ -64,6 +64,22 @@ namespace SlivenProjectsTests.Tests
                     $"should be {searchPage.byStatusMenuTexts[i]}, but is not");
             }
         }
+
+        [Test]
+        public void ByYearsMenu_LinksTexts_ShouldBeProper()
+        {
+            var searchPage = new SearchPage(driver);
+            searchPage.GoToTargetPage(searchPage.pageUrl);
+            bool[] yearsMenuChecks = searchPage.menuLinksTextsCheck(searchPage.yearsMenuItems, searchPage.yearsMenuTexts);
+
+            for (int i = 0; i < yearsMenuChecks.Length; i++)
+            {
+                Console.WriteLine(yearsMenuChecks[i]);
+                Console.WriteLine(searchPage.yearsMenuTexts[i]);
+                Assert.IsTrue(yearsMenuChecks[i], $"By Role Of Sliven menu item {searchPage.yearsMenuTexts[i]} " +
+                    $"should be {searchPage.yearsMenuTexts[i]}, but is not");
+            }
+        }
     }
 
 
