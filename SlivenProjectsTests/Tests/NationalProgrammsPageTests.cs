@@ -63,6 +63,22 @@ namespace SlivenProjectsTests.Tests
             }
         }
 
+        [Test]
+        public void ByYearsMenu_LinksTexts_ShouldBeProper()
+        {
+            NationalProgrammsPage nationalProgrammsPage = new NationalProgrammsPage(driver);
+            nationalProgrammsPage.GoToTargetPage(nationalProgrammsPage.pageUrl);
+            bool[] yearsMenuChecks = nationalProgrammsPage.menuLinksTextsCheck(nationalProgrammsPage.yearsMenuItems, nationalProgrammsPage.yearsMenuTexts);
+
+            for (int i = 0; i < yearsMenuChecks.Length; i++)
+            {
+                Console.WriteLine(yearsMenuChecks[i]);
+                Console.WriteLine(nationalProgrammsPage.yearsMenuTexts[i]);
+                Assert.IsTrue(yearsMenuChecks[i], $"By Role Of Sliven menu item {nationalProgrammsPage.yearsMenuTexts[i]} " +
+                    $"should be {nationalProgrammsPage.yearsMenuTexts[i]}, but is not");
+            }
+        }
+
 
 
 
