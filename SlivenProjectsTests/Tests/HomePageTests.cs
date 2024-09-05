@@ -44,7 +44,7 @@ namespace SlivenProjectsTests.Tests
 
             for (int i = 0; i < byStatusMenuChecks.Length; i++)
             {
-                Assert.IsTrue(byStatusMenuChecks[i], $"ByProjects Status menu item {homePage.byStatusMenuTexts[i]} " +
+                Assert.IsTrue(byStatusMenuChecks[i], $"By Status menu item {homePage.byStatusMenuTexts[i]} " +
                     $"should be {homePage.byStatusMenuTexts[i]}, but is not");
             }
         }
