@@ -71,8 +71,7 @@ namespace SlivenProjectsTests.Tests
 
             for (int i = 0; i < yearsMenuChecks.Length; i++)
             {
-                Console.WriteLine(yearsMenuChecks[i]);
-                Console.WriteLine(otherEUFundsPage.yearsMenuTexts[i]);
+
                 Assert.IsTrue(yearsMenuChecks[i], $"By year menu item {otherEUFundsPage.yearsMenuTexts[i]} " +
                     $"should be {otherEUFundsPage.yearsMenuTexts[i]}, but is not");
             }
