@@ -1,9 +1,4 @@
 ﻿using SlivenProjectsTests.Pages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SlivenProjectsTests.Tests
 {
@@ -75,8 +70,7 @@ namespace SlivenProjectsTests.Tests
 
             for (int i = 0; i < yearsMenuChecks.Length; i++)
             {
-                Console.WriteLine(yearsMenuChecks[i]);
-                Console.WriteLine(projectsPage.yearsMenuTexts[i]);
+
                 Assert.IsTrue(yearsMenuChecks[i], $"By year menu item {projectsPage.yearsMenuTexts[i]} " +
                     $"should be {projectsPage.yearsMenuTexts[i]}, but is not");
             }
