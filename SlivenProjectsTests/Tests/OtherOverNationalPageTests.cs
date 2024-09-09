@@ -37,6 +37,20 @@ namespace SlivenProjectsTests.Tests
             }
         }
 
+        [Test]
+        public void ByStatus_LinksTexts_ShouldBeProper()
+        {
+            var otherOverNationalPage = new OtherOverNationalPage(driver);
+            otherOverNationalPage.GoToTargetPage(otherOverNationalPage.pageUrl);
+            bool[] byStatusMenuChecks = otherOverNationalPage.menuLinksTextsCheck(otherOverNationalPage.byStatusMenuItems, otherOverNationalPage.byStatusMenuTexts);
+
+            for (int i = 0; i < byStatusMenuChecks.Length; i++)
+            {
+                Assert.IsTrue(byStatusMenuChecks[i], $"ByProjects Status menu item {otherOverNationalPage.byStatusMenuTexts[i]} " +
+                    $"should be {otherOverNationalPage.byStatusMenuTexts[i]}, but is not");
+            }
+        }
+
 
 
     }
