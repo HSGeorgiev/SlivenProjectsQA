@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SlivenProjectsTests.Pages
 {
-    internal class OtherOverNational : BasePage
+    internal class OtherOverNationalPage : BasePage
     {
-        public OtherOverNational(IWebDriver driver) : base(driver)
+        public OtherOverNationalPage(IWebDriver driver) : base(driver)
         {
         }
 
