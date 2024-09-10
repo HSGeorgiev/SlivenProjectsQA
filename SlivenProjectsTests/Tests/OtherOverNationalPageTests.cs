@@ -46,7 +46,21 @@ namespace SlivenProjectsTests.Tests
             }
         }
 
+        [Test]
+        public void RoleOfSliven_LinksTexts_ShouldBeProper()
+        {
+            var otherOverNationalPage = new OtherOverNationalPage(driver);
+            otherOverNationalPage.GoToTargetPage(otherOverNationalPage.pageUrl);
+            bool[] roleMenuChecks = otherOverNationalPage.menuLinksTextsCheck(otherOverNationalPage.roleOfSlivenMunMenuItems, otherOverNationalPage.roleOfSlivenMunMenuTexts);
 
+            for (int i = 0; i < roleMenuChecks.Length; i++)
+            {
+                Assert.IsTrue(roleMenuChecks[i], $"By Role Of Sliven menu item {otherOverNationalPage.roleOfSlivenMunMenuTexts[i]} " +
+                    $"should be {otherOverNationalPage.byStatusMenuTexts[i]}, but is not");
 
+            }
+
+        }
     }
+
 }
