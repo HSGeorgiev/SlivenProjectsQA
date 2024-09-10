@@ -61,6 +61,21 @@ namespace SlivenProjectsTests.Tests
             }
 
         }
+
+        [Test]
+        public void ByYearsMenu_LinksTexts_ShouldBeProper()
+        {
+            OtherOverNationalPage otherOverNationalPage = new OtherOverNationalPage(driver);
+            otherOverNationalPage.GoToTargetPage(otherOverNationalPage.pageUrl);
+            bool[] yearsMenuChecks = otherOverNationalPage.menuLinksTextsCheck(otherOverNationalPage.yearsMenuItems, otherOverNationalPage.yearsMenuTexts);
+
+            for (int i = 0; i < yearsMenuChecks.Length; i++)
+            {
+
+                Assert.IsTrue(yearsMenuChecks[i], $"By year menu item {otherOverNationalPage.yearsMenuTexts[i]} " +
+                    $"should be {otherOverNationalPage.yearsMenuTexts[i]}, but is not");
+            }
+        }
     }
 
 }
