@@ -2,7 +2,7 @@
 
 namespace SlivenProjectsTests.Tests
 {
-    internal class OtherEUFundsPgeTests : BaseTests
+    internal class OtherEUFundsPageTests : BaseTests
     {
         
 
