@@ -41,7 +41,7 @@ namespace SlivenProjectsTests.Tests
         [Test]
         public void ByStatus_LinksTexts_ShouldBeProper()
         {
-            var completedProjectsPage = new CompletedProjectsPage(driver);
+            CompletedProjectsPage completedProjectsPage = new CompletedProjectsPage(driver);
             completedProjectsPage.GoToTargetPage(completedProjectsPage.pageUrl);
             bool[] byStatusMenuChecks = completedProjectsPage.menuLinksTextsCheck(completedProjectsPage.byStatusMenuItems, completedProjectsPage.byStatusMenuTexts);
 
@@ -51,6 +51,20 @@ namespace SlivenProjectsTests.Tests
                 Console.WriteLine(completedProjectsPage.byStatusMenuTexts[i]);
 
                 Assert.IsTrue(byStatusMenuChecks[i], $"ByProjects Status menu item {completedProjectsPage.byStatusMenuTexts[i]} " +
+                    $"should be {completedProjectsPage.byStatusMenuTexts[i]}, but is not");
+            }
+        }
+
+        [Test]
+        public void RoleOfSliven_LinksTexts_ShouldBeProper()
+        {
+            CompletedProjectsPage completedProjectsPage = new CompletedProjectsPage(driver);
+            completedProjectsPage.GoToTargetPage(completedProjectsPage.pageUrl);
+            bool[] roleMenuChecks = completedProjectsPage.menuLinksTextsCheck(completedProjectsPage.roleOfSlivenMunMenuItems, completedProjectsPage.roleOfSlivenMunMenuTexts);
+
+            for (int i = 0; i < roleMenuChecks.Length; i++)
+            {
+                Assert.IsTrue(roleMenuChecks[i], $"By Role Of Sliven menu item {completedProjectsPage.roleOfSlivenMunMenuTexts[i]} " +
                     $"should be {completedProjectsPage.byStatusMenuTexts[i]}, but is not");
             }
         }
