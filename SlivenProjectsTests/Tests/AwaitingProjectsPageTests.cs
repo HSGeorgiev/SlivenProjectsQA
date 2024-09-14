@@ -18,6 +18,20 @@ namespace SlivenProjectsTests.Tests
             }
         }
 
+        [Test]
+        public void InRegisterMenu_LinksTexts_ShouldBeProper()
+        {
+            AwaitingProjectsPage awaitingProjectsPage = new AwaitingProjectsPage(driver);
+            awaitingProjectsPage.GoToTargetPage(awaitingProjectsPage.pageUrl);
+            bool[] inRegisterMenuChecks = awaitingProjectsPage.menuLinksTextsCheck(awaitingProjectsPage.inRegisterMenuItems, awaitingProjectsPage.inRegisterMenuTexts);
+
+            for (int i = 0; i < inRegisterMenuChecks.Length; i++)
+            {
+                Assert.IsTrue(inRegisterMenuChecks[i], $"InRegister menu item {awaitingProjectsPage.inRegisterMenuTexts[i]} " +
+                    $"should be {awaitingProjectsPage.inRegisterMenuTexts[i]}, but is not");
+            }
+        }
+
     }
 
 
