@@ -49,6 +49,20 @@ namespace SlivenProjectsTests.Tests
             }
         }
 
+        [Test]
+        public void RoleOfSliven_LinksTexts_ShouldBeProper()
+        {
+            AwaitingProjectsPage awaitingProjectsPage = new AwaitingProjectsPage(driver);
+            awaitingProjectsPage.GoToTargetPage(awaitingProjectsPage.pageUrl);
+            bool[] roleMenuChecks = awaitingProjectsPage.menuLinksTextsCheck(awaitingProjectsPage.roleOfSlivenMunMenuItems, awaitingProjectsPage.roleOfSlivenMunMenuTexts);
+
+            for (int i = 0; i < roleMenuChecks.Length; i++)
+            {
+                Assert.IsTrue(roleMenuChecks[i], $"By Role Of Sliven menu item {awaitingProjectsPage.roleOfSlivenMunMenuTexts[i]} " +
+                    $"should be {awaitingProjectsPage.byStatusMenuTexts[i]}, but is not");
+            }
+        }
+
     }
 
 
