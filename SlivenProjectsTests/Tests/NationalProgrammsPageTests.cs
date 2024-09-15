@@ -41,8 +41,8 @@ namespace SlivenProjectsTests.Tests
 
             for (int i = 0; i < byStatusMenuChecks.Length; i++)
             {
-                Console.WriteLine(byStatusMenuChecks[i]);
-                Console.WriteLine(nationalProgrammsPage.byStatusMenuTexts[i]);
+                //Console.WriteLine(byStatusMenuChecks[i]);
+                //Console.WriteLine(nationalProgrammsPage.byStatusMenuTexts[i]);
 
                 Assert.IsTrue(byStatusMenuChecks[i], $"ByProjects Status menu item {nationalProgrammsPage.byStatusMenuTexts[i]} " +
                     $"should be {nationalProgrammsPage.byStatusMenuTexts[i]}, but is not");
