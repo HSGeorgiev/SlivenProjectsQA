@@ -23,7 +23,19 @@ namespace SlivenProjectsTests.Tests
             }
         }
 
+        [Test]
+        public void InRegisterMenu_LinksTexts_ShouldBeProper()
+        {
+            var leadingOrganizationPage = new LeadingOrganizationPage(driver);
+            leadingOrganizationPage.GoToTargetPage(leadingOrganizationPage.pageUrl);
+            bool[] inRegisterMenuChecks = leadingOrganizationPage.menuLinksTextsCheck(leadingOrganizationPage.inRegisterMenuItems, leadingOrganizationPage.inRegisterMenuTexts);
 
+            for (int i = 0; i < inRegisterMenuChecks.Length; i++)
+            {
+                Assert.IsTrue(inRegisterMenuChecks[i], $"InRegister menu item {leadingOrganizationPage.inRegisterMenuTexts[i]} " +
+                    $"should be {leadingOrganizationPage.inRegisterMenuTexts[i]}, but is not");
+            }
+        }
 
 
     }
