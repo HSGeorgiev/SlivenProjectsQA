@@ -22,5 +22,19 @@ namespace SlivenProjectsTests.Tests
                     $"should be {partnerOrganizationPage.topMenuTexts[i]}, but is not");
             }
         }
+
+        [Test]
+        public void InRegisterMenu_LinksTexts_ShouldBeProper()
+        {
+            var partnerOrganizationPage = new PartnerOrganizationPage(driver);
+            partnerOrganizationPage.GoToTargetPage(partnerOrganizationPage.pageUrl);
+            bool[] inRegisterMenuChecks = partnerOrganizationPage.menuLinksTextsCheck(partnerOrganizationPage.inRegisterMenuItems, partnerOrganizationPage.inRegisterMenuTexts);
+
+            for (int i = 0; i < inRegisterMenuChecks.Length; i++)
+            {
+                Assert.IsTrue(inRegisterMenuChecks[i], $"InRegister menu item {partnerOrganizationPage.inRegisterMenuTexts[i]} " +
+                    $"should be {partnerOrganizationPage.inRegisterMenuTexts[i]}, but is not");
+            }
+        }
     }
 }
