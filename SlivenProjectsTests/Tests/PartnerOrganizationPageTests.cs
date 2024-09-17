@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SlivenProjectsTests.Tests
 {
-    internal class PPartnerOrganizationPageTests : BaseTests
+    internal class PartnerOrganizationPageTests : BaseTests
     {
     }
 }
