@@ -23,5 +23,19 @@ namespace SlivenProjectsTests.Tests
             }
         }
 
+        [Test]
+        public void InRegisterMenu_LinksTexts_ShouldBeProper()
+        {
+            var currentYearPage = new CurrentYearPage(driver);
+            currentYearPage.GoToTargetPage(currentYearPage.pageUrl);
+            bool[] inRegisterMenuChecks = currentYearPage.menuLinksTextsCheck(currentYearPage.inRegisterMenuItems, currentYearPage.inRegisterMenuTexts);
+
+            for (int i = 0; i < inRegisterMenuChecks.Length; i++)
+            {
+                Assert.IsTrue(inRegisterMenuChecks[i], $"InRegister menu item {currentYearPage.inRegisterMenuTexts[i]} " +
+                    $"should be {currentYearPage.inRegisterMenuTexts[i]}, but is not");
+            }
+        }
+
     }
 }
