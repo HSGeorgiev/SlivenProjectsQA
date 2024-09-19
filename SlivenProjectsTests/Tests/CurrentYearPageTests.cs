@@ -37,5 +37,23 @@ namespace SlivenProjectsTests.Tests
             }
         }
 
+
+        [Test]
+        public void ByStatus_LinksTexts_ShouldBeProper()
+        {
+            var currentYearPage = new CurrentYearPage(driver);
+            currentYearPage.GoToTargetPage(currentYearPage.pageUrl);
+            bool[] byStatusMenuChecks = currentYearPage.menuLinksTextsCheck(currentYearPage.byStatusMenuItems, currentYearPage.byStatusMenuTexts);
+
+            for (int i = 0; i < byStatusMenuChecks.Length; i++)
+            {
+                //Console.WriteLine(byStatusMenuChecks[i]);
+                //Console.WriteLine(completedProjectsPage.byStatusMenuTexts[i]);
+
+                Assert.IsTrue(byStatusMenuChecks[i], $"ByProjects Status menu item {currentYearPage.byStatusMenuTexts[i]} " +
+                    $"should be {currentYearPage.byStatusMenuTexts[i]}, but is not");
+            }
+        }
+
     }
 }
