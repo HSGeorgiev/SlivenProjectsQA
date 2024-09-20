@@ -64,5 +64,19 @@ namespace SlivenProjectsTests.Tests
             }
         }
 
+        [Test]
+        public void ByYearsMenu_LinksTexts_ShouldBeProper()
+        {
+            var currentYearPage = new CurrentYearPage(driver);
+            currentYearPage.GoToTargetPage(currentYearPage.pageUrl);
+            bool[] yearsMenuChecks = currentYearPage.menuLinksTextsCheck(currentYearPage.yearsMenuItems, currentYearPage.yearsMenuTexts);
+
+            for (int i = 0; i < yearsMenuChecks.Length; i++)
+            {
+                Assert.IsTrue(yearsMenuChecks[i], $"By year menu item {currentYearPage.yearsMenuTexts[i]} " +
+                    $"should be {currentYearPage.yearsMenuTexts[i]}, but is not");
+            }
+        }
+
     }
 }
