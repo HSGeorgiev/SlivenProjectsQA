@@ -28,6 +28,9 @@ namespace SlivenProjectsTests.Pages
         public By roleOfSlivenMunMenuItems = By.XPath("(//ul[@class='menu'])[3]//li");
         public By yearsMenuItems = By.XPath("(//ul[@class='menu'])[4]//li");
 
+        // Page Heading
+        public By pageHeading = By.XPath("//h1//a");
+
         // Footer Elements
         public By footerText = By.XPath("//div[@class='art-footer-text']//div");
 
