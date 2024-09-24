@@ -18,7 +18,18 @@ namespace SlivenProjectsTests.Tests
             Assert.IsTrue(footerTextActual == footerTextExpected, "Footer text should be correct");
         }
 
+        [Test]
+        public void HeadingTextShouldBeCorect()
+        {
+            var currentYearPage = new CurrentYearPage(driver);
+            currentYearPage.GoToTargetPage(BASE_URL);
 
+            string headingTextActual = currentYearPage.GetText(currentYearPage.pageHeading);
+            string headingTextExpected = "Регистър за проекти - Община Сливен";
+            //Console.WriteLine(headingTextActual);
+            //Console.WriteLine(headingTextExpected);
+            Assert.IsTrue(headingTextActual == headingTextExpected, "Footer text should be correct");
+        }
 
         [Test]
         public void TopMenu_LinksTexts_ShouldBeProper()
