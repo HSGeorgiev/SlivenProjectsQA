@@ -31,9 +31,6 @@ namespace SlivenProjectsTests.Tests
         [TestCase("Водеща организация", "/index.php?option=com_sobi2&catid=39&Itemid=53")]
         [TestCase("Партньорска организация", "/index.php?option=com_sobi2&catid=40&Itemid=53")]
 
-
-
-
         public void TopMenu_LinksTexts_ShouldBeProper(string pageHeading, string subUrl)
         {
             BasePage basePage = new BasePage(driver);
@@ -46,6 +43,21 @@ namespace SlivenProjectsTests.Tests
                     $"should be {basePage.topMenuTexts[i]}, but is not");
             }
         }
+
+        [Test]
+        public void FooterTextShouldBeCorect()
+        {
+            BasePage basePage = new BasePage(driver);
+            basePage.GoToTargetPage(BASE_URL);
+            string currentYear = DateTime.Now.Year.ToString();
+            string footerTextActual = basePage.GetText(basePage.footerText);
+            string footerTextExpected = $"Община Сливен, (с) 2008 - {currentYear}";
+            //Console.WriteLine(footerTextActual);
+            //Console.WriteLine(footerTextExpected);
+            Assert.IsTrue(footerTextActual  == footerTextExpected, "Footer text should be correct");
+        }
+
+
 
         // To check the test
 

@@ -28,6 +28,9 @@ namespace SlivenProjectsTests.Pages
         public By roleOfSlivenMunMenuItems = By.XPath("(//ul[@class='menu'])[3]//li");
         public By yearsMenuItems = By.XPath("(//ul[@class='menu'])[4]//li");
 
+        // Footer Elements
+        public By footerText = By.XPath("//div[@class='art-footer-text']//div");
+
         // texts on the all six top-menu links/tabs
         public string[] topMenuTexts = { "Начало", "Структурни фондове на ЕС", "Други инструменти на ЕС",
             "Предприсъединителни и-ти", "Национални програми", "Търсене" };
