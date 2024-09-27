@@ -4,7 +4,21 @@ namespace SlivenProjectsTests.Tests
 {
     internal class OtherEUFundsPageTests : BaseTests
     {
-        
+
+        [Test]
+        public void FooterTextShouldBeCorect()
+        {
+            var otherEUFundsPage = new OtherEUInstrumentsPage(driver);
+            otherEUFundsPage.GoToTargetPage(BASE_URL);
+            string currentYear = DateTime.Now.Year.ToString();
+            string footerTextActual = otherEUFundsPage.GetText(otherEUFundsPage.footerText);
+            string footerTextExpected = $"Община Сливен, (с) 2008 - {currentYear}";
+            //Console.WriteLine(footerTextActual);
+            //Console.WriteLine(footerTextExpected);
+            Assert.IsTrue(footerTextActual == footerTextExpected, "Footer text should be correct");
+        }
+
+
 
         [Test]
         public void TopMenu_LinksTexts_ShouldBeProper()
