@@ -5,7 +5,22 @@ namespace SlivenProjectsTests.Tests
     internal class PreEUFundsPageTests  : BaseTests
     {
 
-        
+        [Test]
+        public void FooterTextShouldBeCorect()
+        {
+            PreEUFundsPage preEUFundsPage = new PreEUFundsPage(driver);
+            preEUFundsPage.GoToTargetPage(BASE_URL);
+            string currentYear = DateTime.Now.Year.ToString();
+            string footerTextActual = preEUFundsPage.GetText(preEUFundsPage.footerText);
+            string footerTextExpected = $"Община Сливен, (с) 2008 - {currentYear}";
+            //Console.WriteLine(footerTextActual);
+            //Console.WriteLine(footerTextExpected);
+            Assert.IsTrue(footerTextActual == footerTextExpected, "Footer text should be correct");
+        }
+
+
+
+
 
         [Test]
         public void TopMenu_LinksTexts_ShouldBeProper()
