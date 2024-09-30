@@ -5,6 +5,21 @@ namespace SlivenProjectsTests.Tests
     internal class OtherOverNationalPageTests : BaseTests
     {
         [Test]
+        public void FooterTextShouldBeCorect()
+        {
+            var otherOverNationalPage = new OtherOverNationalPage(driver);
+            otherOverNationalPage.GoToTargetPage(BASE_URL);
+            string currentYear = DateTime.Now.Year.ToString();
+            string footerTextActual = otherOverNationalPage.GetText(otherOverNationalPage.footerText);
+            string footerTextExpected = $"Община Сливен, (с) 2008 - {currentYear}";
+            //Console.WriteLine(footerTextActual);
+            //Console.WriteLine(footerTextExpected);
+            Assert.IsTrue(footerTextActual == footerTextExpected, "Footer text should be correct");
+        }
+
+
+
+        [Test]
         public void TopMenu_LinksTexts_ShouldBeProper()
         {
             var otherOverNationalPage = new OtherOverNationalPage(driver);
